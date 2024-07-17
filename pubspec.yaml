@@ -59,7 +59,8 @@ dependencies:
   device_info_plus: ^9.1.0
   flutter_launcher_icons: ^0.13.1
   http: ^1.2.2
-
+  rename: ^3.0.2
+  entry: ^1.0.0
 
 flutter_launcher_icons:
   android: "launcher_icon"
