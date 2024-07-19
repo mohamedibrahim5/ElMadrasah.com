@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl_phone_field/country_picker_dialog.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:intl_phone_field/phone_number.dart';
+import 'package:test_project/views/register_screen/cubit/register_cubit.dart';
 
 import 'colors_manager.dart';
 
@@ -35,11 +36,23 @@ class _PhoneFieldState extends State<PhoneField> {
   @override
   Widget build(BuildContext context) {
     return IntlPhoneField(
+      textAlign: TextAlign.right,
+      style:Theme.of(context).textTheme.bodyMedium!.copyWith(
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w400
+      ) ,
+      onCountryChanged: (country){
+        print('fdjksjfk${country.name}');
+        // RegisterCubit.get(context).country = country.name ;
+      },
       flagsButtonMargin: REdgeInsets.only(
-        left: 16,
+        // left: 16,
         right: 10
       ),
       pickerDialogStyle: PickerDialogStyle(
+        backgroundColor: ColorsManager.greyText,
+        searchFieldInputDecoration: InputDecoration(
+        ),
         countryNameStyle: Theme.of(context).textTheme.bodySmall!.copyWith(
           fontWeight: FontWeight.w700,
           color: ColorsManager.black
@@ -47,15 +60,17 @@ class _PhoneFieldState extends State<PhoneField> {
       ),
       controller: widget.controller,
       validator: widget.validator,
-      initialCountryCode: 'EG',
+      initialCountryCode: 'AE',
       textAlignVertical: TextAlignVertical.center,
       dropdownIconPosition: IconPosition.trailing,
-      dropdownTextStyle: Theme.of(context).textTheme.bodyLarge,
+      dropdownTextStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(
+        color: ColorsManager.greyText
+      ),
       decoration: InputDecoration(
         isDense: true,
         counterText: '',
-        hintText: 'fdassa',
-        labelText: "widget.label",
+        hintText: "رقم الموبايل *",
+        // labelText: "رقم الموبايل",
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(width: 1.w, color: ColorsManager.greyTextColor),
           borderRadius: BorderRadius.circular( 10.r),
@@ -72,7 +87,10 @@ class _PhoneFieldState extends State<PhoneField> {
         filled: true,
         isCollapsed: true,
         fillColor:  ColorsManager.textFormFieldColor,
-        focusedErrorBorder: InputBorder.none,
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: ColorsManager.red,width: 0.5.w,),
+          borderRadius: BorderRadius.all(Radius.circular(12.0.r)),
+        ),
         hintStyle: Theme.of(context).textTheme.displayLarge,
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(width: 1.w, color: ColorsManager.greyTextColor),

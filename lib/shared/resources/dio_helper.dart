@@ -17,16 +17,6 @@ class DioHelper {
         followRedirects: false,
         receiveTimeout: const Duration(seconds: 1 * 30),
         validateStatus: (state) {
-          if (state == 401) {
-            Utils.showErrorToast(StringsManager.unAuthorizedUserMessage);
-            sl<PrefsHelper>().setData(key: Constants.guestCheck, value: true);
-            _logout();
-            return false;
-          }
-          else if (state == 500){
-            _handleError();
-            return false;
-          }
           return state! < 500;
         }));
     dio.interceptors.add(PrettyDioLogger(
@@ -34,47 +24,11 @@ class DioHelper {
     return dio;
   }
 
-   addHeaders() async {
-     final token =  sl<PrefsHelper>().getToken2();
-     final session =  sl<PrefsHelper>().getSession2();
-
-
-     if(token.isNotEmpty){
-       sl<Dio>().options.headers['Authorization'] = 'Bearer $token' ;
-     }
-      if(session.isNotEmpty && token.isEmpty){
-        sl<Dio>().options.headers['Authorization'] = session ;
-      }
-
-    // await sl<PrefsHelper>().getToken().then((value) {
-    //
-    //   if (value.isEmpty) return;
-    //
-    //     // Constants.acceptLang: lang,
-    //
-    // });
-
-
-  }
 
 
 
   void removeHeader() {
     sl<Dio>().options.headers = {};
-  }
-
-
-  Future<void> _logout() async {
-    await sl<PrefsHelper>().removeToken2();
-    await sl<PrefsHelper>().removeSession2() ;
-    sl<Dio>().options.headers = {
-
-    };
-    sl<NavigationService>().navigatePushNamedAndRemoveUntil(RoutesManager.loginScreen);
-  }
-
-  _handleError() {
-    sl<NavigationService>().navigatePushNamedAndRemoveUntil(RoutesManager.serverErrorScreen);
   }
 
 }

@@ -1,8 +1,6 @@
 
-
 import 'package:intl_phone_field/phone_number.dart';
 import 'package:string_validator/string_validator.dart';
-import 'package:test_project/shared/resources/printFunc.dart';
 import 'package:test_project/shared/resources/string_manager.dart';
 
 class CustomValidation  {
@@ -15,19 +13,18 @@ class CustomValidation  {
           StringsManager.required;
     } else if ((value?.length ?? 0) < 8) {
       validationError =
-          StringsManager.passwordShort;
+          "كلمة المرور قصيرة";
     } else if (!RegExp(r'[A-Z]')
+        .hasMatch(value ?? "") &&
+        !RegExp(r'[a-z]')
+            .hasMatch(value ?? "")
+    ) {
+      validationError =
+          "يجب ان تحتوي علي حرف علي الاقل";
+    }  else if (!RegExp(r'\d')
         .hasMatch(value ?? "")) {
       validationError =
-          StringsManager.minUpperCase;
-    } else if (!RegExp(r'[a-z]')
-        .hasMatch(value ?? "")) {
-      validationError =
-          StringsManager.minLowerCase;
-    } else if (!RegExp(r'\d')
-        .hasMatch(value ?? "")) {
-      validationError =
-          StringsManager.minNumber;
+          "يجب ان تحتوي علي رقم علي الاقل";
     }else if(error.isNotEmpty){
       validationError = error;
     }
@@ -42,22 +39,24 @@ class CustomValidation  {
           StringsManager.required;
     } else if (confirm.toString() != password.toString()) {
       validationError =
-          StringsManager.confirmPassword;
-    }  else if ((confirm?.length ?? 0) < 8) {
+          "يجب ان تكون كلمة السر متطابقة";
+    }  else if (confirm?.isEmpty ?? false) {
       validationError =
-          StringsManager.passwordShort;
+          StringsManager.required;
+    } else if ((confirm?.length ?? 0) < 8) {
+      validationError =
+      "كلمة المرور قصيرة";
     } else if (!RegExp(r'[A-Z]')
+        .hasMatch(confirm ?? "") &&
+        !RegExp(r'[a-z]')
+            .hasMatch(confirm ?? "")
+    ) {
+      validationError =
+      "يجب ان تحتوي علي حرف علي الاقل";
+    }  else if (!RegExp(r'\d')
         .hasMatch(confirm ?? "")) {
       validationError =
-          StringsManager.minUpperCase;
-    } else if (!RegExp(r'[a-z]')
-        .hasMatch(confirm ?? "")) {
-      validationError =
-          StringsManager.minLowerCase;
-    } else if (!RegExp(r'\d')
-        .hasMatch(confirm ?? "")) {
-      validationError =
-          StringsManager.minNumber;
+      "يجب ان تحتوي علي رقم علي الاقل";
     }
 
 
@@ -87,7 +86,7 @@ class CustomValidation  {
       validationError =
           StringsManager.errorNumber;
     }
-    else if(isEmail(value)){
+    else if(isEmail(value??'')){
       StringsManager.phone;
     }else if(error.isNotEmpty){
       validationError = error;
@@ -109,7 +108,6 @@ class CustomValidation  {
     return validationError;
   }
   static String? phoneValidator(PhoneNumber? value) {
-    printFunc(printName: 'kdsfkjk');
     if (value == null) {
       return StringsManager.addPhone;
     }

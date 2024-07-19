@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.4.0 <4.0.0'
+  sdk: '3.3.4'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -34,12 +34,12 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.6
+  cupertino_icons: ^1.0.8
   flutter_screenutil: ^5.9.1
   flutter_svg: ^2.0.10+1
-  flutter_bloc: ^8.1.5
+  flutter_bloc: ^8.1.6
   bloc: ^8.1.4
-  dio: ^5.4.3+1
+  dio: ^5.5.0+1
   get_it: ^7.7.0
   connectivity_plus: ^5.0.0
   shared_preferences: ^2.2.3
@@ -53,14 +53,13 @@ dependencies:
   cached_network_image: ^3.3.1
   loading_animation_widget: ^1.2.1
   intl_phone_field: ^3.2.0
-  image_picker: ^1.1.2
-  photo_view: ^0.15.0
-  permission_handler: ^11.3.1
-  device_info_plus: ^9.1.0
   flutter_launcher_icons: ^0.13.1
-  http: ^1.2.2
   rename: ^3.0.2
   entry: ^1.0.0
+  animated_splash_screen: ^1.3.0
+  page_transition: ^2.1.0
+  percent_indicator: ^4.2.3
+  lottie: ^3.1.2
 
 flutter_launcher_icons:
   android: "launcher_icon"
@@ -111,26 +110,24 @@ flutter:
 
 
   fonts:
-    - family: Poppins
+    - family: Rubik
       fonts:
-        - asset: fonts/Poppins/Poppins-Black.ttf
-        - asset: fonts/Poppins/Poppins-BlackItalic.ttf
-        - asset: fonts/Poppins/Poppins-Bold.ttf
-        - asset: fonts/Poppins/Poppins-BoldItalic.ttf
-        - asset: fonts/Poppins/Poppins-ExtraBold.ttf
-        - asset: fonts/Poppins/Poppins-ExtraBoldItalic.ttf
-        - asset: fonts/Poppins/Poppins-ExtraLight.ttf
-        - asset: fonts/Poppins/Poppins-ExtraLightItalic.ttf
-        - asset: fonts/Poppins/Poppins-Italic.ttf
-        - asset: fonts/Poppins/Poppins-Light.ttf
-        - asset: fonts/Poppins/Poppins-LightItalic.ttf
-        - asset: fonts/Poppins/Poppins-Medium.ttf
-        - asset: fonts/Poppins/Poppins-MediumItalic.ttf
-        - asset: fonts/Poppins/Poppins-Regular.ttf
-        - asset: fonts/Poppins/Poppins-SemiBold.ttf
-        - asset: fonts/Poppins/Poppins-SemiBoldItalic.ttf
-        - asset: fonts/Poppins/Poppins-Thin.ttf
-        - asset: fonts/Poppins/Poppins-ThinItalic.ttf
+        - asset: fonts/Rubik/Rubik-Black.ttf
+        - asset: fonts/Rubik/Rubik-BlackItalic.ttf
+        - asset: fonts/Rubik/Rubik-Bold.ttf
+        - asset: fonts/Rubik/Rubik-BoldItalic.ttf
+        - asset: fonts/Rubik/Rubik-ExtraBold.ttf
+        - asset: fonts/Rubik/Rubik-ExtraBoldItalic.ttf
+        - asset: fonts/Rubik/Rubik-Italic.ttf
+        - asset: fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf
+        - asset: fonts/Rubik/Rubik-Light.ttf
+        - asset: fonts/Rubik/Rubik-LightItalic.ttf
+        - asset: fonts/Rubik/Rubik-Medium.ttf
+        - asset: fonts/Rubik/Rubik-MediumItalic.ttf
+        - asset: fonts/Rubik/Rubik-Regular.ttf
+        - asset: fonts/Rubik/Rubik-VariableFont_wght.ttf
+        - asset: fonts/Rubik/Rubik-SemiBold.ttf
+        - asset: fonts/Rubik/Rubik-SemiBoldItalic.ttf
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

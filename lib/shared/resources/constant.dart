@@ -1,36 +1,20 @@
 class Constants {
 
 
-   //  static String baseUrl = "http://192.168.88.5:8000/";
-   static String baseUrl = "https://apishawarma.cyparta.com/";
- // static String baseUrl = "https://octopus-app-2-5ipqv.ondigitalocean.app/";
-  static String emailRegix =
-      r"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'"
-      r'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-'
-      r'\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*'
-      r'[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4]'
-      r'[0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9]'
-      r'[0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\'
-      r'x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])';
-  static String registerClientUrl = "register/client/";
-  static String loginFCM = "api/devices/login/";
-  static String registerOwnerUrl = "register/service/";
-  static String verifyOtpClient = "api/verify-otp/";
-  static String verifyOtpOwner  = "api/verifyotp/service/";
-  static String resendOtp = "api/send-otp/";
-  static String getHomeDataUrl = "food/home/";
-  static String deleteCartItemUrl = "food/cart/";
-   static String deleteAccount = "api/delete-account/";
-  static String addCartItemUrl = "food/cart/add-to-cart/";
-  static String getHomeCategoryDataUrl = "food/products/";
-  static String profileUrl = "api/profile/";
-  static String getCart = "food/cart/get-from-cart/";
+   static String baseUrl = "https://elmadrasah-api-b15c60ca4d8d.herokuapp.com/";
+  static String verifyOtpClient = "flow/course/";
+  static String resendOtp = "flow/count/";
+  static String getHomeCategoryDataUrl = "flow/material/";
+   static String getHomePurpose = "flow/purpose/";
+   static String getDay = "flow/day/";
+   static String getSup = "flow/subsription/";
+  static String resetPassUrl = "flow/period/";
+   static String sessionBaseUrl = "flow/class/";
+   static String payBaseUrl = "flow/pay/";
 
-  static String resetPassUrl = "api/reset-password/";
-  static String changePassUrl = "api/change-password/";
+
+
   // static String forgotPassUrl = "api/request-reset/";//unUsed
-  static String verifyForgotPassOtpUrl = "api/reset_password/";
-  static const String token = 'token';
   static const String riderStartLocationPolyline = 'riderStartLocationPolyline';
   static const String rememberMe = 'rememberMe';
   static const String phone = 'phone';
@@ -43,7 +27,8 @@ class Constants {
   static const String tokenText = 'Token';
   static const String firstLunch = 'firstLunch';
   static const String showOnBoarding = 'showOnBoarding';
-  static const String guestCheck = 'guestCheck';
+   static const String checkRegister = 'checkRegister';
+   static const String guestCheck = 'guestCheck';
   static const authorization = 'Authorization';
   static const acceptLang = 'Accept-Language';
   static const arabic = 'ar';
@@ -147,8 +132,8 @@ class Constants {
   static const String getColorPreference = 'getColorPreference';
   static const String getCurrency = 'getCurrency';
   static const String currencyUrl = 'https://api.coincap.io/v2/assets';
-  static String loginUrl = "api/login/";
-  static const String registerUrl = 'api/register/';
+  static String loginUrl = "flow/specify/";
+  static const String registerUrl = 'flow/form/';
   static const String getUserProfile = 'api/profile/';
   static const String indexOfItem = 'indexOfItem';
    static const String indexOfItemOrder = 'indexOfItemOrder';

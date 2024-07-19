@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 void printFunc({
-  bool printing = false,
+  bool printing = true,
   required String printName
 }){
   if(printing){

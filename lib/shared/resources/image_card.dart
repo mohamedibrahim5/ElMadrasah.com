@@ -25,7 +25,7 @@ class ImageCard extends StatelessWidget {
                 isCircular: true,
               ),
             ),
-            errorWidget: (context, url, error) => const CustomImageError())
+            errorWidget: (context, url, error) => Icon(Icons.sports_baseball),)
         : const CustomImageError();
   }
 }

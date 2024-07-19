@@ -1,82 +1,54 @@
-import '../../model/requests/add_cart_item_request.dart';
-import '../../model/requests/check_out_request.dart';
-import '../../model/requests/forgot_pass_request.dart';
-import '../../model/requests/login_request.dart';
-import '../../model/requests/otp_verfiy_request.dart';
+import '../../model/requests/add_info_puprposal_request.dart';
+import '../../model/requests/specifiction_request.dart';
+import '../../model/requests/add_course_request.dart';
 import '../../model/requests/register_request.dart';
-import '../../model/requests/resend_otp_request.dart';
-import '../../model/requests/reset_pass_request.dart';
-import '../../model/responses/add_coupon_response.dart';
-import '../../model/responses/add_delete_cart_item_response.dart';
-import '../../model/responses/forgot_pass_response.dart';
-import '../../model/responses/get_cart_model.dart';
-import '../../model/responses/get_home_response.dart';
-import '../../model/responses/get_order_response.dart';
-import '../../model/responses/get_profile_response.dart';
-import '../../model/responses/login_response.dart';
-import '../../model/responses/otp_verify_response.dart';
+import '../../model/requests/add_period_session.dart';
+import '../../model/responses/add_info_response.dart';
+import '../../model/responses/material_model_response.dart';
+import '../../model/responses/specifiction_response.dart';
+import '../../model/responses/add_course_response.dart';
 import '../../model/responses/register_response.dart';
-import '../../model/responses/resend_otp_response.dart';
-import '../../model/responses/reset_pass_response.dart';
 
 abstract class RemoteDataSource {
 
   Future<UserRegisterSuccessResponse> register(
       {required UserRegisterRequest registerRequest});
 
-  Future<LoginSuccessResponse> login({required LoginRequest loginRequest});
+
+  Future<SpecifctionResponse> specifiatio({required SpecifitionRequest specifionRequest});
 
 
-  Future<LoginSuccessResponse> getUserProfile();
 
-  Future<UserOtpVerifySuccessResponse> userOtp(
-      {required UserOtpVerifyRequest userOtpVerifyRequest});
+  Future<AddCourseSuccessResponse> addCourse(
+      {required AddCourseRequest addCourseRequest});
 
-  Future<ForgotPassSuccessResponse> forgotPassword(
-      {required ForgotPassRequest forgotPassRequest});
+  Future<AddInfoPurposalSuccessResponse> addInfoPurposal(
+      {required AddInfoPurposalRequest addInfoPurposalRequest});
 
-  Future<ResetPasswordSuccessResponse> resetPassword(
-      {required ResetPasswordRequest resetPasswordRequest});
+  Future<AddInfoPurposalSuccessResponse> addPeriod(
+      {required AddPeriodResponse addPeriodResponse});
 
-  Future<ResendOtpSuccessResponse> resendOtp(
-      {required ResendOtpRequest resendOtpRequest});
+  Future<AddInfoPurposalSuccessResponse> addSession(
+      {required AddSessionResponse addPeriodResponse});
 
-  Future<HomeModel> getHomeData();
-  Future<List<CartItemModel>> getHomeDataCategory({required String categoryTitle,required String search});
+  Future<AddInfoPurposalSuccessResponse> pay(
+      {required PaySessionResponse paySessionResponse});
 
-  Future<AddDeleteCartItemResponse> addCartItem({required AddCartItemRequest addCartItemRequest});
+  Future<List<MaterialModel>> getHomeMaterial();
+  Future<List<MaterialModel>> getHomePruPose();
 
-  Future<AddDeleteCartItemResponse> deleteCartItem({required int productId});
-
-  Future<GetProfileResponse> getProfile();
-
-  Future<GetCartModel> getCart() ;
-
-  Future<GetProfileResponse> patchProfile({required String fullName,required String email});
-
-  Future<AddDeleteCartItemResponse> deleteCart({required int cartId});
-
-  Future<ItemsUpdate> patchCartItem({required PatchCartItemRequest addCartItemRequest});
-
-  Future<ChangePasswordSuccessResponse> changePassword(
-      {required ChangePasswordRequest resetPasswordRequest});
-
-  Future<ChangePasswordSuccessResponse> checkOut(
-      {required CheckOutRequest checkOutRequest});
-
-  Future<AddCouponResponse> addCoupon(
-      {required String coupon});
+  Future<List<MaterialModel>> getDays();
+  Future<List<SubsriptionModel>> getSup();
 
 
-  Future<List<GetOrderResponse>> getOrder(
-      {required String orderStatus});
 
-  Future<GetOrderResponse> cancelOrder(
-      {required int orderId});
 
-  Future<ChangePasswordSuccessResponse> reOrder({required int orderId});
 
-  Future<ChangePasswordSuccessResponse> deleteAccount();
+
+
+
+
+
 
 
 }

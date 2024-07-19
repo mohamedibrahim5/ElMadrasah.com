@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/views/app_root/dark_mode_cubit/dark_mode_cubit.dart';
 
-import '../views/app_root/dark_mode_cubit/dark_mode_cubit.dart';
 import 'colors_manager.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
@@ -20,10 +20,10 @@ class LoadingIndicatorWidget extends StatelessWidget {
         height: size ?? 40,
         child: Center(
           child:isCircular ? LoadingAnimationWidget.inkDrop(
-            color:ThemeCubit.get(context).isDark? ColorsManager.primaryColor:ColorsManager.primaryColor,
+            color:ThemeCubit.get(context).isDark? ColorsManager.greenColor:ColorsManager.greenColor,
             size: 40,
           ) : LoadingAnimationWidget.prograssiveDots(
-            color:ThemeCubit.get(context).isDark? ColorsManager.primaryColor:ColorsManager.primaryColor,
+            color:ThemeCubit.get(context).isDark? ColorsManager.greenColor:ColorsManager.greenColor,
             size: 40,
           ),
         ),

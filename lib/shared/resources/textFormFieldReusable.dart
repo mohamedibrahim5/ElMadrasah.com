@@ -80,6 +80,8 @@ class CustomFieldState extends State<CustomFormField> {
         textAlignVertical: TextAlignVertical.center,
         // cursorHeight: 30.h,
         maxLength: widget.length,
+        maxLines:widget.customContentPadding != null ? 7 :1,
+        minLines:widget.customContentPadding != null ? 5:1,
         onChanged: widget.onChanged,
         onTap: widget.onTap,
         autofocus: widget.autoFocus ?? false,

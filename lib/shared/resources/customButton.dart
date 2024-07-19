@@ -29,8 +29,8 @@ class MainButton extends StatelessWidget {
       child: Container(
         width:width ?? (isOneTitle ? double.infinity : null),
         decoration: BoxDecoration(
-          color:color ??  Theme.of(context).primaryColor,
-          borderRadius: BorderRadiusDirectional.circular(10.r),
+          color:color ??  ColorsManager.green500,
+          borderRadius: BorderRadiusDirectional.circular(24.r),
           border:colorTitle == null ? null :  Border.all(
             color: ColorsManager.greyTextColor.withOpacity(0.5),
             width: 1
@@ -39,7 +39,7 @@ class MainButton extends StatelessWidget {
         child: Padding(
           padding:  REdgeInsets.symmetric(
             horizontal:isOneTitle ?  28 : 16,
-            vertical: 10
+            vertical: 18
           ),
           child:isOneTitle ?
           Center(

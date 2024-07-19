@@ -12,7 +12,7 @@ class AppTheme {
     primaryColor: ColorsManager.primaryColor,
     canvasColor: ColorsManager.blackColor,
     disabledColor: ColorsManager.greyTextColor,
-    fontFamily: "Poppins",
+    fontFamily: "Rubik",
     appBarTheme:
     const AppBarTheme(backgroundColor: Colors.transparent, elevation: 0),
     textTheme: TextTheme(

@@ -4,11 +4,12 @@ import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:test_project/shared/resources/prefs_helper.dart';
+import 'package:test_project/views/register_screen/cubit/register_cubit.dart';
 import '../../data/remote/remote_datasource.dart';
 import '../../data/remote/remote_datasource_impl.dart';
 import '../../repository/repository.dart';
 import '../../repository/repository_impl.dart';
-import '../views/app_root/dark_mode_cubit/dark_mode_cubit.dart';
+import '../../views/app_root/dark_mode_cubit/dark_mode_cubit.dart';
 import 'dio_helper.dart';
 import 'navigation_service.dart';
 import 'network_info.dart';
@@ -81,5 +82,6 @@ Future<void> _registerLazySingleton() async {
 
 Future<void> _registerFactory() async {
   sl.registerFactory(() => ThemeCubit());
+  sl.registerFactory(() => RegisterCubit(repository:sl()));
 
 }

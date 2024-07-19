@@ -1,32 +1,47 @@
 class UserRegisterSuccessResponse {
-  final String? phone;
-  final String? email;
-  final String? fullName;
-  final bool? isVerified;
-  final String? message;
+  final int? id ;
+  final String? firstName;
+  final String? lastName;
+  final int? age;
+  final String? gender;
+  final String? nationality ;
+  final String? phone ;
+  final String? email ;
+  final String? difficulties ;
+  final String? description ;
   UserRegisterSuccessResponse({
     this.phone,
     this.email,
-    this.isVerified,
-    this.fullName,
-    this.message,
+    this.id,
+    this.firstName,
+    this.lastName,
+    this.age,
+    this.gender,
+    this.difficulties,
+    this.nationality,
+    this.description,
   });
 
   factory UserRegisterSuccessResponse.fromJson(
       {required Map<dynamic, dynamic> json}) {
     return UserRegisterSuccessResponse(
-      isVerified: json['is_verified'],
-      phone: json['phone'],
+
+      id: json['id'],
+      firstName: json['first_name'],
+      age: json['age'],
       email: json['email'],
-      fullName: json['full_name'],
-      message: json['message'],
+      lastName: json['family_name'],
+      gender: json['gender'],
+      phone:json['whatsapp'],
+      nationality: json['nationality'],
+      difficulties: json['difficulties'],
+      description:json['description'],
     );
   }
 
   factory UserRegisterSuccessResponse.fromNotVerified({required Map<dynamic, dynamic> json}) {
     return UserRegisterSuccessResponse(
-      isVerified: false,
-      message: json['message'],
+
       phone: json['phone'],
       email: json['email'],
     );
